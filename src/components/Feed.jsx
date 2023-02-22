@@ -1,4 +1,6 @@
-import React from 'react'
+import { Box, Stack, Typography } from '@mui/material'
+import React, { useEffect, useState } from 'react'
+
 
 const Feed = () => {
     return (

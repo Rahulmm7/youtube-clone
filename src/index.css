@@ -26,7 +26,13 @@ a {
     background-color: transparent;
 }
 
-/* 
+.search-bar {
+    border: none;
+    outline: none;
+    width: 350px;
+}
+
+
 .category-btn:hover {
     background-color: #FC1503 !important;
     color: white !important;
@@ -41,11 +47,7 @@ a {
     width: 100% !important;
 }
 
-.search-bar {
-    border: none;
-    outline: none;
-    width: 350px;
-}
+
 
 .category-btn {
     font-weight: bold !important;
@@ -88,4 +90,4 @@ a {
     .search-bar {
         width: 200px;
     }
-} */
+}
