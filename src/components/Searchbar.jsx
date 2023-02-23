@@ -11,7 +11,7 @@ const Searchbar = () => {
             sx={{
                 borderRadius: 20,
                 border: '1px solid #e3e3e3',
-                pl: '2',
+                pl: '2px',
                 boxShadow: 'none',
                 mr: { sm: 5 }
             }}
