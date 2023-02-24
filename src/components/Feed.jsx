@@ -1,10 +1,22 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Sidebar, Videos } from './'
+import { fetchFromAPI } from '../utils/fetchFromAPI'
+
 
 
 
 const Feed = () => {
+
+    const [selectedCategory, setselectedCategory] = useState("New");
+    const [videos, setVideos] = useState([])
+
+    useEffect(() => {
+        fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+            .then((data) => setVideos(data.items))
+    }, [selectedCategory]
+    );
+
     return (
 
         <Stack sx={{
@@ -15,7 +27,7 @@ const Feed = () => {
                 borderRight: "1px solid #3d3d3d",
                 px: { sx: 0, md: 2 }
             }}>
-                <Sidebar />
+                <Sidebar selectedCategory={selectedCategory} setselectedCategory={setselectedCategory} />
                 <Typography className='copyright'>
                     Copyright 2023 Rahul M Mm
                 </Typography>
@@ -25,10 +37,10 @@ const Feed = () => {
                 <Typography
                     variant='h4' fontWeight={'bold'}
                     marginBottom='2'>
-                    New <span style={{ color: '#f31503' }}>videos</span>
+                    {selectedCategory} <span style={{ color: '#f31503' }}>videos</span>
                 </Typography>
             </Box>
-            <Videos />
+            <Videos videos={videos} />
 
         </Stack>
     )
