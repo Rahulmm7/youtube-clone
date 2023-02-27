@@ -28,7 +28,7 @@ const Feed = () => {
                 px: { sx: 0, md: 2 }
             }}>
                 <Sidebar selectedCategory={selectedCategory} setselectedCategory={setselectedCategory} />
-                <Typography className='copyright'>
+                <Typography className='copyright' variant="body2" sx={{ mt: 1.5, color: "#fff", }}>
                     Copyright 2023 Rahul M Mm
                 </Typography>
 
@@ -36,7 +36,8 @@ const Feed = () => {
             <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: '2' }}>
                 <Typography
                     variant='h4' fontWeight={'bold'}
-                    marginBottom='2'>
+                    marginBottom='2'
+                    sx={{ color: "white" }}>
                     {selectedCategory} <span style={{ color: '#f31503' }}>videos</span>
                 </Typography>
             </Box>
