@@ -24,6 +24,7 @@ const Feed = () => {
         }}>
             <Box sx={{
                 height: { sx: "auto", md: "92vh" },
+                width: "150px",
                 borderRight: "1px solid #3d3d3d",
                 px: { sx: 0, md: 2 }
             }}>
@@ -33,15 +34,20 @@ const Feed = () => {
                 </Typography>
 
             </Box>
-            <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: '2' }}>
-                <Typography
-                    variant='h4' fontWeight={'bold'}
-                    marginBottom='2'
-                    sx={{ color: "white" }}>
-                    {selectedCategory} <span style={{ color: '#f31503' }}>videos</span>
-                </Typography>
-            </Box>
-            <Videos videos={videos} />
+            <Stack flexDirection='column'>
+
+                <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: '2' }}>
+                    <Typography
+                        variant='h4' fontWeight={'bold'}
+                        marginBottom='2'
+                        sx={{ color: "white" }}>
+                        {selectedCategory} <span style={{ color: '#f31503' }}>videos</span>
+                    </Typography>
+                </Box>
+                <Box sx={{ width: "100%" }}>
+                    <Videos videos={videos} />
+                </Box>
+            </Stack>
 
         </Stack>
     )

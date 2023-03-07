@@ -3,6 +3,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: 100vw;
+}
+
+.root {
+    width: 100%;
 }
 
 a {
